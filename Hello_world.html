@@ -2,31 +2,14 @@
 <html>
   <body>
     <script>
-      //Чтобы устаревший код работал, как и раньше, добавляется  диррекитва "use strict" в первой строчке исполняемого кода
-      "use strict";
-      //в JavaScript в переменных могут быть разные типы данных и числа и дроби и строки
-      let message = "hello";
-      message = 12345.344;
-      alert(message);
-      //Числовой тип данных (number) представляет как целочисленные значения, так и числа с плавающей точкой
-      let n = 1123345.556543;
-      alert(n);
-      alert("not  number" / n); // NaN, такое деление является ошибкой
-      let str = "строки с одинарными кавычками";
-      let str1 = "строки с двойными кавычками";
-      let str3 = `обратные кавычки в строке позволяют вставить число или др переменную${10}`;
-      alert(`result ${10 + 20}`);
-      //может содержать булевый оператор: ложь/истина
-      let isGreater = 9 > 8;
-      alert(isGreater);
-      let age;
-      alert(age); //undefined - неприсвоено значение, null если равно 0
-      let x = 29;
-      typeof x;
-      let name = "Genrih";
-      alert("Hello ${1}");
-      alert(`Hello ${name}`);
-      alert(`Hello  ${"name"}`);
+      alert("Hello!"); //показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК»
+      let age = prompt("How old are you? ", 100); //отобразит модальное окно с текстом, полем для ввода текста и кнопками OK/Отмена
+      alert(`You have  ${age} yeras old?`);
+      //confirm отображает модальное окно с текстом вопроса question и двумя кнопками: OK и Отмена
+      let isOlder = confirm("Are you oldest in this room?");
+      alert(isOlder);
+      let userName = prompt("What is your name?");
+      alert(`Hello, ${userName}!`);
     </script>
   </body>
 </html>
