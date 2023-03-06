@@ -4,29 +4,29 @@
     <script>
       //Чтобы устаревший код работал, как и раньше, добавляется  диррекитва "use strict" в первой строчке исполняемого кода
       "use strict";
-      /*let message; //объявили переменную
-      message = "Hello"; //придали ей значение
-      alert(message); //сказали вывести переменную в виде всплывающего сообщения
-      let user = "John"; //можно использовать var вместо let
-      age = 35;
-      message_1 = "Hello";
-      alert(user, age, message_1);
-      let hello = "Hello world!";
-      let message; // копируем значение 'Hello world' из переменной hello в переменную message
-      message = hello; // теперь две переменные содержат одинаковые данные
-      alert(hello); // Hello world!
-      alert(message); // Hello world!
-      let $ = 1;
-      let _ = 4; //имена переменной могут содержать $и_ БЫТЬ ЗАГЛАВНЫМИ, не могут начинаться на цифры, но могут содержать их
-      alert($ + _ + '= "отлично!"');
-      alert("Я JavaScript!");
-      alert("I am joung FrotEnd Developer!");
-      const HEh = 23; //Переменные, объявленные с помощью const, называются «константами». Их нельзя изменить. Попытка сделать это приведёт к ошибке
-      alert(HEh);*/
-      let Name = "John";
-      let admin;
-      admin = Name;
-      alert(admin);
+      //в JavaScript в переменных могут быть разные типы данных и числа и дроби и строки
+      let message = "hello";
+      message = 12345.344;
+      alert(message);
+      //Числовой тип данных (number) представляет как целочисленные значения, так и числа с плавающей точкой
+      let n = 1123345.556543;
+      alert(n);
+      alert("not  number" / n); // NaN, такое деление является ошибкой
+      let str = "строки с одинарными кавычками";
+      let str1 = "строки с двойными кавычками";
+      let str3 = `обратные кавычки в строке позволяют вставить число или др переменную${10}`;
+      alert(`result ${10 + 20}`);
+      //может содержать булевый оператор: ложь/истина
+      let isGreater = 9 > 8;
+      alert(isGreater);
+      let age;
+      alert(age); //undefined - неприсвоено значение, null если равно 0
+      let x = 29;
+      typeof x;
+      let name = "Genrih";
+      alert("Hello ${1}");
+      alert(`Hello ${name}`);
+      alert(`Hello  ${"name"}`);
     </script>
   </body>
 </html>
