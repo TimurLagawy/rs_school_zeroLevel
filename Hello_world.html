@@ -2,14 +2,29 @@
 <html>
   <body>
     <script>
-      alert("Hello!"); //показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК»
-      let age = prompt("How old are you? ", 100); //отобразит модальное окно с текстом, полем для ввода текста и кнопками OK/Отмена
-      alert(`You have  ${age} yeras old?`);
-      //confirm отображает модальное окно с текстом вопроса question и двумя кнопками: OK и Отмена
-      let isOlder = confirm("Are you oldest in this room?");
-      alert(isOlder);
-      let userName = prompt("What is your name?");
-      alert(`Hello, ${userName}!`);
+      //строковое преобразование
+      let value = true;
+      alert(typeof value); //typeof показывает тип данных - boolean
+      value = String(true); //теперь true это строка
+      alert(typeof value);
+      //численное преобразование
+      let str = "123";
+      alert(typeof str); //string
+      let num = Number(str);
+      alert(typeof num); //number
+      let age = Number("Something string");
+      alert(age); //NaN -не получилось преобразовать в число
+      alert(Number("789"));
+      alert(Number("12345b"));
+      alert(Number(false));
+      alert(Number(true));
+      //логическое преобразование
+      alert(Boolean(0)); //false
+      alert(Boolean("0")); //true
+      alert(Boolean(1)); //true
+      alert(Boolean("Hello")); //true
+      alert(Boolean("")); //falce
+      alert(Boolean("  ")); //true
     </script>
   </body>
 </html>
