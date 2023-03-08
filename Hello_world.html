@@ -59,7 +59,7 @@
       } else {
         message = "incorrect login";
       }
-      alert(message);*/
+      alert(message);
       let login = prompt("please fill your login");
       let message =
         login == "Сотрудник"
@@ -70,6 +70,22 @@
           ? "Нет логина"
           : "incorrect login";
       alert(message);
+      let hours = prompt("wht time is it?");
+      let message =
+        hours < 9 || hours > 18 ? "oficce is closed" : "you are welcome";
+      alert(message);
+      let hour = prompt("what time is it?", 12);
+      let isWeekend = true;
+
+      if (hour < 10 || hour > 18 || isWeekend) {
+        console.log("Офис закрыт."); // это выходной
+      }*/
+      let age = prompt("insert age");
+      if (age <= 14 || age >= 99) {
+        alert("wrong age");
+      } else {
+        alert("good age");
+      }
     </script>
   </body>
 </html>
