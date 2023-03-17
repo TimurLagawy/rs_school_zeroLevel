@@ -110,10 +110,17 @@
               console.log(i);
               i++;
             }*/
-      function getThis() {
-        return this;
+      function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
       }
-      console.log(getThis());
+
+      let arr = [1, 2, 15];
+
+      arr.sort(compareNumeric);
+
+      alert(arr);
     </script>
   </body>
 </html>
