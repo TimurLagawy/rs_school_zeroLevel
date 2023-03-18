@@ -99,7 +99,7 @@ explode("312")
 should return :
 
 "333122"*/
-      function explode(str) {
+      /*function explode(str) {
         let result = "";
         for (let i = 0; i < str.length; i++) {
           const num = Number(str[i]);
@@ -108,6 +108,45 @@ should return :
           }
         }
         return result;
+      }*/
+      function explode(s) {
+        s = s.split("");
+        newS = "";
+        for (let i = 0; i < s.length; i++) {
+          switch (s[i]) {
+            case "1":
+              newS = newS + "1";
+              break;
+            case "2":
+              newS = newS + "22";
+              break;
+            case "3":
+              newS = newS + "333";
+              break;
+            case "4":
+              newS = newS + "4444";
+              break;
+            case "5":
+              newS = newS + "55555";
+              break;
+            case "6":
+              newS = newS + "666666";
+              break;
+            case "7":
+              newS = newS + "7777777";
+              break;
+            case "8":
+              newS = newS + "88888888";
+              break;
+            case "9":
+              newS = newS + "999999999";
+              break;
+            case "0":
+              newS = newS + "";
+              break;
+          }
+        }
+        return newS;
       }
     </script>
   </body>
