@@ -155,7 +155,7 @@ Every year he takes photos of farmers handshaking. Johnny knows that no two farm
 However, Johnny would like to know the minimal amount of people that participated this year just by counting all the handshakes.
 
 Help Johnny by writing a function, that takes the amount of handshakes and returns the minimal amount of people needed to perform these handshakes (a pair of farmers handshake only once).*/
-      function getParticipants(handshakes) {
+      /* function getParticipants(handshakes) {
         let people = 0;
         let sum = 0;
 
@@ -165,6 +165,35 @@ Help Johnny by writing a function, that takes the amount of handshakes and retur
         }
 
         return people;
+      }*/ $; /*The goal of this exercise is to convert a string to a new string where each character in the new string is if that character appears only once in the original string, or if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate."("")"
+
+Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" */
+      function duplicateEncode(word) {
+        // Convert all characters to lowercase
+        word = word.toLowerCase();
+
+        // Create an empty object to store character counts
+        const charCounts = {};
+
+        // Iterate over each character in the string and count its occurrences
+        for (let i = 0; i < word.length; i++) {
+          const char = word.charAt(i);
+          charCounts[char] = (charCounts[char] || 0) + 1;
+        }
+
+        // Iterate over each character in the string and replace it with
+        // a '(' or ')' based on its occurrence count in the charCounts object
+        let result = "";
+        for (let i = 0; i < word.length; i++) {
+          const char = word.charAt(i);
+          result += charCounts[char] === 1 ? "(" : ")";
+        }
+
+        return result;
       }
     </script>
   </body>
