@@ -206,10 +206,57 @@ For example:
 Because 2 is the 4th number in the Fibonacci Sequence.
 
 For reference, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.*/
-      function nthFibo(n) {
+      /*function nthFibo(n) {
         let [prev, curr] = [0, 1];
         for (let i = 1; i < n; i++) [prev, curr] = [curr, prev + curr];
         return prev;
+      }*/
+      /*Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
+The function must accept a non-negative integer. If it is zero, it just returns . Otherwise, the duration is expressed as a combination of , , , and ."now"yearsdayshoursminutesseconds
+It is much easier to understand with an example:
+* For seconds = 62, your function should return 
+    "1 minute and 2 seconds"
+* For seconds = 3662, your function should return
+    "1 hour, 1 minute and 2 seconds"
+For the purpose of this Kata, a year is 365 days and a day is 24 hours.
+Note that spaces are important.
+Detailed rules
+The resulting expression is made of components like , , etc. In general, a positive integer and one of the valid units of time, separated by a space. The unit of time is used in plural if the integer is greater than 1.4 seconds1 year
+The components are separated by a comma and a space (). Except the last component, which is separated by , just like it would be written in English. ", "" and "
+A more significant units of time will occur before than a least significant one. Therefore, is not correct, but is.1 second and 1 year1 year and 1 second
+Different components have different unit of times. So there is not repeated units like in .5 seconds and 1 second
+A component will not appear at all if its value happens to be zero. Hence, is not valid, but it should be just .1 minute and 0 seconds1 minute
+A unit of time must be used "as much as possible". It means that the function should not return , but instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.61 seconds1 minute and 1 sec*/
+      function formatDuration(seconds) {
+        if (seconds === 0) {
+          return "now";
+        }
+
+        const timeUnits = {
+          year: 365 * 24 * 60 * 60,
+          day: 24 * 60 * 60,
+          hour: 60 * 60,
+          minute: 60,
+          second: 1,
+        };
+
+        const timeStrings = [];
+
+        for (const [unit, secondsPerUnit] of Object.entries(timeUnits)) {
+          const count = Math.floor(seconds / secondsPerUnit);
+          if (count > 0) {
+            const unitString = count > 1 ? `${unit}s` : unit;
+            timeStrings.push(`${count} ${unitString}`);
+            seconds %= secondsPerUnit;
+          }
+        }
+
+        const lastString = timeStrings.pop();
+        if (timeStrings.length === 0) {
+          return lastString;
+        } else {
+          return `${timeStrings.join(", ")} and ${lastString}`;
+        }
       }
     </script>
   </body>
